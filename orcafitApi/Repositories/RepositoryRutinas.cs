@@ -95,8 +95,8 @@ namespace orcafitApi.Repositories
             rutina.IdRutina = idrutina;
             rutina.Nombre = nombre;
             rutina.RutinaTexto = rutinatexto;
-            rutina.Video = idrutina + "_" + video;
-            rutina.Imagen = idrutina + "_" + imagen;
+            rutina.Video = video;
+            rutina.Imagen = imagen;
             rutina.Categoria = categoria;
             rutina.Fecha = DateTime.Now;
 
