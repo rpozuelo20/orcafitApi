@@ -69,10 +69,10 @@ namespace orcafitApi.Controllers
         }
         [HttpPut]
         [Authorize]
-        public void UpdateImagenUsuario(Usuario updateUser)
+        public void UpdateImagenUsuario(Usuario usuario)
         {
             Usuario currentUser = this.helper.GetUserFromJwt(HttpContext.User.Claims.ToList());
-            this.repo.UpdateImagenUsuario(currentUser.IdUser, updateUser.Imagen);
+            this.repo.UpdateImagenUsuario(currentUser.IdUser, usuario.Imagen);
         }
     }
 }
