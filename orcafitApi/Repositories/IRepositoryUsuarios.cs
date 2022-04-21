@@ -13,5 +13,6 @@ namespace orcafitApi.Repositories
         int InsertUsuario(string username, string password, string imagen);
         void DeleteUsuario(string username);
         Usuario ExisteUsuario(string username, string password);
+        void UpdateImagenUsuario(int id, string imagen);
     }
 }

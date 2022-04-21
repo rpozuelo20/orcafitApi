@@ -67,5 +67,11 @@ namespace orcafitApi.Controllers
             Usuario usuario = this.helper.GetUserFromJwt(HttpContext.User.Claims.ToList());
             this.repo.DeleteUsuario(usuario.Username);
         }
+        [HttpPut]
+        [Authorize]
+        public void UpdateImagenUsuario(Usuario usuario)
+        {
+            this.repo.UpdateImagenUsuario(usuario.IdUser, usuario.Imagen);
+        }
     }
 }

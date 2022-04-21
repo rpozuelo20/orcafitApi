@@ -62,5 +62,12 @@ namespace orcafitApi.Repositories
             Usuario usuario = this.context.Usuarios.SingleOrDefault(x => x.Username.ToLower() == username.ToLower() && x.Password == password);
             return usuario;
         }
+
+        public void UpdateImagenUsuario(int id, string imagen)
+        {
+            Usuario usuario = this.context.Usuarios.SingleOrDefault(x => x.IdUser == id);
+            usuario.Imagen = imagen;
+            this.context.SaveChanges();
+        }
     }
 }
