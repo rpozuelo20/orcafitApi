@@ -69,5 +69,12 @@ namespace orcafitApi.Repositories
             usuario.Imagen = imagen;
             this.context.SaveChanges();
         }
+
+        public void VerificarUsuario(int id)
+        {
+            Usuario usuario = this.context.Usuarios.SingleOrDefault(x => x.IdUser == id);
+            usuario.Verificacion = 1;
+            this.context.SaveChanges();
+        }
     }
 }

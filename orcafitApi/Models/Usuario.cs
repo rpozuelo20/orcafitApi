@@ -23,5 +23,7 @@ namespace orcafitApi.Models
         public string Imagen { get; set; }
         [Column("FECHA")]
         public DateTime Fecha { get; set; }
+        [Column("VERIFICACION")]
+        public int Verificacion { get; set; }
     }
 }
