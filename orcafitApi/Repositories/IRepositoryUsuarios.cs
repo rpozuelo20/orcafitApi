@@ -14,6 +14,6 @@ namespace orcafitApi.Repositories
         void DeleteUsuario(string username);
         Usuario ExisteUsuario(string username, string password);
         void UpdateImagenUsuario(int id, string imagen);
-        void VerificarUsuario(int id);
+        void UpdateTierUsuario(int id, string tier);
     }
 }

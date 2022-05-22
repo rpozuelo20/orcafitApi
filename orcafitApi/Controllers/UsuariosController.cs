@@ -27,7 +27,6 @@ namespace orcafitApi.Controllers
         }
         //  Sentencias comunes en los controllers   ˄˄˄
 
-
         //  Metodo en el controller para recuperar los datos de un usuario:
         [HttpGet]
         [Authorize]
@@ -69,16 +68,18 @@ namespace orcafitApi.Controllers
         }
         [HttpPut]
         [Authorize]
+        [Route("[action]")]
         public void UpdateImagenUsuario(Usuario usuario)
         {
             Usuario currentUser = this.helper.GetUserFromJwt(HttpContext.User.Claims.ToList());
             this.repo.UpdateImagenUsuario(currentUser.IdUser, usuario.Imagen);
         }
         [HttpPut]
+        [Authorize]
         [Route("[action]")]
-        public void VerificarUsuario(Usuario usuario)
+        public void UpdateTierUsuario(Usuario usuario)
         {
-            this.repo.VerificarUsuario(usuario.IdUser);
+            this.repo.UpdateTierUsuario(usuario.IdUser, usuario.Tier);
         }
     }
 }

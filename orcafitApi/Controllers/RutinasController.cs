@@ -28,7 +28,6 @@ namespace orcafitApi.Controllers
         }
         //  Sentencias comunes en los controllers   ˄˄˄
 
-
         //  Metodo para recuperar las categorias:
         [HttpGet]
         [Route("Categorias")]

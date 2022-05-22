@@ -25,5 +25,7 @@ namespace orcafitApi.Models
         public string Categoria { get; set; }
         [Column("FECHA")]
         public DateTime Fecha { get; set; }
+        [Column("TIER")]
+        public string Tier { get; set; }
     }
 }

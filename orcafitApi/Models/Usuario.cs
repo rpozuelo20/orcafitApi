@@ -17,13 +17,15 @@ namespace orcafitApi.Models
         public string Username { get; set; }
         [Column("PASSWORD")]
         public string Password { get; set; }
+        [Column("EMAIL")]
+        public string Email { get; set; }
         [Column("ROLE")]
         public string Role { get; set; }
+        [Column("TIER")]
+        public string Tier { get; set; }
         [Column("IMAGEN")]
         public string Imagen { get; set; }
         [Column("FECHA")]
         public DateTime Fecha { get; set; }
-        [Column("VERIFICACION")]
-        public int Verificacion { get; set; }
     }
 }

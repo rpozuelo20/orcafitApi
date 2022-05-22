@@ -29,7 +29,6 @@ namespace orcafitApi.Repositories
                 return this.context.Usuarios.Max(z => z.IdUser) + 1;
             }
         }
-
         public List<Usuario> GetUsuarios()
         {
             return this.context.Usuarios.ToList();
@@ -48,6 +47,7 @@ namespace orcafitApi.Repositories
             usuario.Role = "user";
             usuario.Imagen = imagen;
             usuario.Fecha = DateTime.Now;
+            usuario.Tier = "free";
             this.context.Usuarios.Add(usuario);
             this.context.SaveChanges();
             return idusuario;
@@ -62,18 +62,16 @@ namespace orcafitApi.Repositories
             Usuario usuario = this.context.Usuarios.SingleOrDefault(x => x.Username.ToLower() == username.ToLower() && x.Password == password);
             return usuario;
         }
-
         public void UpdateImagenUsuario(int id, string imagen)
         {
             Usuario usuario = this.context.Usuarios.SingleOrDefault(x => x.IdUser == id);
             usuario.Imagen = imagen;
             this.context.SaveChanges();
         }
-
-        public void VerificarUsuario(int id)
+        public void UpdateTierUsuario(int id, string tier)
         {
             Usuario usuario = this.context.Usuarios.SingleOrDefault(x => x.IdUser == id);
-            usuario.Verificacion = 1;
+            usuario.Tier = tier;
             this.context.SaveChanges();
         }
     }

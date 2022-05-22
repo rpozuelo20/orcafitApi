@@ -25,7 +25,6 @@ namespace orcafitApi.Helpers
             this.Audience = configuration.GetValue<string>("ApiOAuth:Audience");
             this.SecretKey = configuration.GetValue<string>("ApiOAuth:SecretKey");
         }
-
         // Metodo que genera el Token mediante una clave simetrica mediante un SecretKey personalizado con cifrado
         public SymmetricSecurityKey GetKeyToken()
         {
@@ -69,12 +68,6 @@ namespace orcafitApi.Helpers
                 });
             return options;
         }
-
-        /// <summary>
-        /// Metodo para recuperar el usuario token, esta funcion solamente recupera el usuario en el controlador.
-        /// </summary>
-        /// <param name="claims"></param>
-        /// <returns></returns>
         public Usuario GetUserFromJwt(List<Claim> claims)
         {
             string jsonUsuario = claims.SingleOrDefault(z => z.Type == "UserData").Value;

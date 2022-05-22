@@ -41,7 +41,6 @@ namespace orcafitApi.Repositories
                 return this.context.Comentarios.Max(z => z.IdComentario) + 1;
             }
         }
-
         public List<Categoria> GetCategorias()
         {
             var consulta = from datos in this.context.Categorias
@@ -99,6 +98,7 @@ namespace orcafitApi.Repositories
             rutina.Imagen = imagen;
             rutina.Categoria = categoria;
             rutina.Fecha = DateTime.Now;
+            rutina.Tier = "free";
 
             this.context.Rutinas.Add(rutina);
             this.context.SaveChanges();
